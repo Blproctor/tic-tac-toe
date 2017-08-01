@@ -1,0 +1,38 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background-color: limegreen;
+  margin: auto;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.container {
+  text-align: center;
+}
+
+#grid-container {
+  text-align: center;
+  width: 600px;
+  & .box {
+    padding: 50px;
+  }
+}
