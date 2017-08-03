@@ -21,18 +21,54 @@ p {
   text-align: center;
 }
 
-.box {
-  border: 1px solid black;
+form {
+  text-align: center;
+  margin: auto;
+  font-size: 13px;
 }
 
-.container {
-  text-align: center;
+.board {
+  margin: 0 auto;
 }
 
-#grid-container {
-  text-align: center;
-  width: 600px;
-  & .box {
-    padding: 50px;
+.table {
+  border-collapse: collapse;
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  .td {
+    border: 1px solid #555;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    &::before {
+    font-size: 1.5em;
+    line-height: 1;
+    }
+    &.cross::before {
+      color: lightblue;
+      content: 'X';
+      }
+    &.circle::before {
+      color: navy;
+      content: 'O';
+      }
+    }
   }
 }
+
+.square {
+  height: 100px;
+  width: 100px;
+}
+
+.v {
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+  }
+
+.h {
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  }

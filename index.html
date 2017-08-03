@@ -15,44 +15,64 @@
       <h1>Most Super Awesome, while still average, Tic Tac Toe Game Ever!</h1>
 
       <p>So, this is a pretty awesome Tic Tac Toe game.  It's also a super average
-        game which makes it pretty cool!  Go ahead, have a go!  Feel free to make a username
-        and password, login, and play a classic game of strategy!</p>
+        game which makes it pretty cool!  Go ahead, have a go!  Feel free to sign up by
+        making a username and password.  Then, login and play a classic game of strategy!</p>
 
+        <div>
+          <form id="sign-up">
+              <fieldset>
+                  <legend>Sign Up Below!</legend>
+                  <input type="text" name="credentials[email]" placeholder="Email">
+                  <input type="password" name="credentials[password]" placeholder="Create Password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input type="submit" name="submit" value="Sign Up!">
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            <form id="sign-in">
+                <fieldset>
+                    <legend>Login Below</legend>
+                    <input type="text" name="credentials[email]" placeholder="Email">
+                    <input type="text" name="credentials[password]" placeholder="Password">
+                    <input type="submit" name="submit" value="Login">
+                </fieldset>
+              </form>
+              </div>
+          <div>
+            <form id="change-password">
+                <fieldset>
+                    <legend>Change Password Below</legend>
+                    <input type="text" name="credentials[password]" placeholder="Old Password">
+                    <input type="text" name="credentials[password]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Submit Changes">
+                </fieldset>
+              </form>
+            </div>
         <h3> Good Luck! </h3>
-        <div class="container" id="grid-container">
-          <div class="row">
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
-            </div>
-            <div class="row">
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
-            </div>
-            <div class="row">
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
-            <div class="col-md-4 box"> yesss</div>
+        <div id="messages"></div>
+        <div id="turn"></div>
+        <div id="board">
+        <table class="center">
+          <tr id="row1">
+            <td id="box1" class="square"></td>
+            <td id="box2" class="square v"></td>
+            <td id="box3" class="square"></td>
+          </tr>
+          <tr id="row2">
+            <td id="box4" class="square h"></td>
+            <td id="box5" class="square v h"></td>
+            <td id="box6" class="square h"></td>
+          </tr>
+          <tr id="row3">
+            <td id="box7" class="square"></td>
+            <td id="box8" class="square v"></td>
+            <td id="box9" class="square"></td>
+          </tr>
+          </table>
         </div>
-      </div>
-        <div>
-          <form>
-              <div class="form-group">
-                  <label form="name">User Login</label>
-                  <input form="text" class="form-content" placeholder="user login">
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-                </form>
-              </div>
-        <div>
-          <form>
-              <div class="form-group">
-                  <label form="name">User Password</label>
-                  <input form="text" class="form-content" placeholder="user password">
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-                </form>
-              </div>
+      <div>
+      <button onclick="reset">New Game</button>
+    </div>
     </body>
 </html>
