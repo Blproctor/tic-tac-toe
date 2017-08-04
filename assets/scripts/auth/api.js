@@ -2,7 +2,7 @@
 
 const signUp = (data) => {
   return $.ajax({
-    url: 'http://localhost:4741/sign-up',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
     method: 'POST',
     data: {
       'credentials': {
@@ -16,7 +16,7 @@ const signUp = (data) => {
 const signIn = (data) => {
   console.log(data)
   return $.ajax({
-    url: 'http://localhost:4741/sign-in',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-in',
     method: 'POST',
     data: {
       'credentials': {
