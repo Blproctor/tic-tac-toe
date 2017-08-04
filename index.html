@@ -34,7 +34,7 @@
                 <fieldset>
                     <legend>Login Below</legend>
                     <input type="text" name="credentials[email]" placeholder="Email">
-                    <input type="text" name="credentials[password]" placeholder="Password">
+                    <input type="password" name="credentials[password]" placeholder="Password">
                     <input type="submit" name="submit" value="Login">
                 </fieldset>
               </form>
@@ -49,18 +49,18 @@
                 </fieldset>
               </form>
             </div>
-        <h3> Good Luck! </h3>
-        <div id="messages"></div>
-        <div id="turn"></div>
-        <div id="board">
-        <table class="center">
+        <h3> Click the "New Game" button at the bottom left to start! Good Luck! </h3>
+        <div class="messages"></div>
+        <div class="turn"></div>
+        <center><div id="board">
+        <table>
           <tr id="row1">
             <td id="box1" class="square"></td>
             <td id="box2" class="square v"></td>
             <td id="box3" class="square"></td>
           </tr>
           <tr id="row2">
-            <td id="box4" class="square h"></td>
+            <td id="box4" class="square h" ></td>
             <td id="box5" class="square v h"></td>
             <td id="box6" class="square h"></td>
           </tr>
@@ -70,9 +70,7 @@
             <td id="box9" class="square"></td>
           </tr>
           </table>
-        </div>
-      <div>
-      <button onclick="reset">New Game</button>
-    </div>
+        </div></center>
+        <button id="reset">New Game!</button>
     </body>
 </html>
