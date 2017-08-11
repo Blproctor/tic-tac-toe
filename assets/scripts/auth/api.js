@@ -30,12 +30,13 @@ const signIn = (data) => {
 const changePassword = (data) => {
   console.log(data)
   return $.ajax({
-    url: 'http://localhost:4741/change-password',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
     method: 'PATCH',
     data: {
       'passwords': {
-        'old': data.passwords.old,
-        'new': data.passwords.new
+        'password': data.credentials.password,
+        'new_password': data.credentials.new_password,
+        'new_password_confirmation': data.credentials.new_password
       }
     }
   })
