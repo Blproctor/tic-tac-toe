@@ -124,7 +124,6 @@ $('#reset').click(function (content) {
 function onClickBox (td, content) {
   // sets 'content' equal to the function 'getPattern' defined below
   content = getPattern(td)
-  console.log(content)
   let pattern
   // if there is no content in the boxes
   if (!content) {
@@ -138,18 +137,15 @@ function onClickBox (td, content) {
     changePattern(td, pattern)
     // checkWhoWon function defined below contains the game win logic
   } if (checkWhoWon(table, pattern, won, player)) {
-    console.log(messages)
-    messages.html('Player ' + player + ' is the winner.')
-    console.log(messages)
+    winMessage(table, pattern, won, player)
     // resets the messages box after a player has won
-    messages.html('')
+    // messages.html('')
   } else {
     // sets 'player' equal to the function 'setNextPlayer' defined below which changes the player turn
     player = setNextPlayer(player)
     // will display whose turn it is in the messages box
     showNextPlayer(turn, player)
     // clears the messages box
-    messages.html('')
   }
 }
 
@@ -190,32 +186,29 @@ function showNextPlayer (turn, player) {
   messages.html('Player turn : ' + player)
 }
 
+function winMessage () {
+  messages.html('Player ' + player + ' has won!!!')
+}
+
 function checkWhoWon (table, pattern, won, player) {
   if ((pattern === 'cross' || 'circle') && table.find('#box1').hasClass(pattern) && table.find('#box2').hasClass(pattern) && table.find('#box3').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box1').hasClass(pattern) && table.find('#box4').hasClass(pattern) && table.find('#box7').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box1').hasClass(pattern) && table.find('#box5').hasClass(pattern) && table.find('#box9').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box4').hasClass(pattern) && table.find('#box5').hasClass(pattern) && table.find('#box6').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box7').hasClass(pattern) && table.find('#box8').hasClass(pattern) && table.find('#box9').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box2').hasClass(pattern) && table.find('#box5').hasClass(pattern) && table.find('#box8').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box3').hasClass(pattern) && table.find('#box6').hasClass(pattern) && table.find('#box9').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   } else if ((pattern === 'cross' || 'circle') && table.find('#box3').hasClass(pattern) && table.find('#box5').hasClass(pattern) && table.find('#box7').hasClass(pattern)) {
     won = true
-    messages.html('Player ' + player + 'has won!!!')
   }
+  return won
 };
 
 // function reset (table) {
