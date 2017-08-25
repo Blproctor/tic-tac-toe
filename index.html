@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <h1>Let's Play Some Tic Tac Toe!</h1>
+
+      <p>So you want to be a Tic Tac Toe master?  You'll probably want some practice!
+        Go ahead, have a go!  Feel free to sign up by
+        making a username and password.  Then, login and play a classic game of strategy!</p>
+
+        <div>
+          <form id="sign-up">
+              <fieldset>
+                  <legend>Sign Up Below!</legend>
+                  <input type="text" name="credentials[email]" placeholder="Email">
+                  <input type="password" name="credentials[password]" placeholder="Create Password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input type="submit" name="submit" value="Sign Up!">
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            <form id="sign-in">
+                <fieldset>
+                    <legend>Login Below</legend>
+                    <input type="text" name="credentials[email]" placeholder="Email">
+                    <input type="password" name="credentials[password]" placeholder="Password">
+                    <input type="submit" name="submit" value="Login">
+                </fieldset>
+              </form>
+              </div>
+          <div>
+            <form id="change-password">
+                <fieldset>
+                    <legend>Change Password Below</legend>
+                    <input type="text" name="credentials[password]" placeholder="Old Password">
+                    <input type="text" name="credentials[password]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Submit Changes">
+                </fieldset>
+              </form>
+            </div>
+        <h3> Click the "New Game" button to start! Good Luck! </h3>
+        <div class="messages"></div>
+        <div class="turn"></div>
+        <center><button id="reset">New Game!</button></center>
+        <center><div id="board">
+        <table>
+          <tr id="row1">
+            <td id="box1" class="square"></td>
+            <td id="box2" class="square v"></td>
+            <td id="box3" class="square"></td>
+          </tr>
+          <tr id="row2">
+            <td id="box4" class="square h" ></td>
+            <td id="box5" class="square v h"></td>
+            <td id="box6" class="square h"></td>
+          </tr>
+          <tr id="row3">
+            <td id="box7" class="square"></td>
+            <td id="box8" class="square v"></td>
+            <td id="box9" class="square"></td>
+          </tr>
+          </table>
+        </div></center>
+    </body>
+</html>
