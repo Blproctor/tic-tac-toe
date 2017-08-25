@@ -3,7 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~./colors';
 
 body {
-  background-color: $limegreen;
+  background-color: $coral;
   margin: auto;
 }
 
@@ -42,7 +42,7 @@ form {
     width: 200px;
 
     .td {
-      border: 100px solid $darkgray;
+      border: 10px solid $darkgray;
       cursor: pointer;
       height: 50px;
       width: 50px;
@@ -77,7 +77,6 @@ form {
   }
 
 .messages {
-  border-style: solid;
   height: 30px;
   text-align: center;
   font-size: 20px;

@@ -1,5 +1,7 @@
 'use strict'
 
+// url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
+
 const signUp = (data) => {
   return $.ajax({
     url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
@@ -30,12 +32,13 @@ const signIn = (data) => {
 const changePassword = (data) => {
   console.log(data)
   return $.ajax({
-    url: 'http://localhost:4741/change-password',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
     method: 'PATCH',
     data: {
       'passwords': {
-        'old': data.passwords.old,
-        'new': data.passwords.new
+        'old': data.credentials.password,
+        'new': data.credentials.new,
+        'new_confirmation': data.credentials.new
       }
     }
   })
