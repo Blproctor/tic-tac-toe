@@ -60,10 +60,8 @@ $('#box9').click(function () {
 // the table is reset, and the first player turn will display in the messages box
 $('#reset').click(function (content) {
   content = false
-  console.log(content)
   player = 1
   messages.html('')
-  console.log(messages)
   td1.empty()
   td2.empty()
   td3.empty()
@@ -110,9 +108,6 @@ $('#reset').click(function (content) {
     td9.removeClass('circle')
   }
   showNextPlayer(turn, player)
-  console.log(turn)
-  console.log(player)
-  console.log(content)
   // for (let i = 0; i < 9; i++) {
   //  if (td[i].hasClass('cross') || td[i].hasClass('circle')) {
   //  td[i].removeClass('cross')
@@ -130,17 +125,35 @@ function onClickBox (td, content) {
     // TODO api call to patch the update to the game
 
     // sets the constant 'pattern' equal to the function 'setPatternForEachPlayer' defined below
-    console.log(player)
     pattern = setPatternForEachPlayer(player)
-    console.log(pattern)
     // changePattern function defined below handles the changing of 'X' and 'O' for each player
     changePattern(td, pattern)
     // checkWhoWon function defined below contains the game win logic
   } if (checkWhoWon(table, pattern, won, player)) {
     winMessage(table, pattern, won, player)
+    td1.off()
+    td2.off()
+    td3.off()
+    td4.off()
+    td5.off()
+    td6.off()
+    td7.off()
+    td8.off()
+    td9.off()
     // resets the messages box after a player has won
     // messages.html('')
+  } else if ((!won) && (table.find('#box1').hasClass('cross') || table.find('#box1').hasClass('circle')) &&
+    (table.find('#box2').hasClass('cross') || table.find('#box2').hasClass('circle')) &&
+    (table.find('#box3').hasClass('cross') || table.find('#box3').hasClass('circle')) &&
+    (table.find('#box4').hasClass('cross') || table.find('#box4').hasClass('circle')) &&
+    (table.find('#box5').hasClass('cross') || table.find('#box5').hasClass('circle')) &&
+    (table.find('#box6').hasClass('cross') || table.find('#box6').hasClass('circle')) &&
+    (table.find('#box7').hasClass('cross') || table.find('#box7').hasClass('circle')) &&
+    (table.find('#box8').hasClass('cross') || table.find('#box8').hasClass('circle')) &&
+    (table.find('#box9').hasClass('cross') || table.find('#box9').hasClass('circle'))) {
+    checkForDraw()
   } else {
+    //  spaceTaken()
     // sets 'player' equal to the function 'setNextPlayer' defined below which changes the player turn
     player = setNextPlayer(player)
     // will display whose turn it is in the messages box
@@ -182,6 +195,14 @@ function setNextPlayer (player) {
   }
 };
 
+// function spaceTaken () {
+//   if (getPattern()) {
+//     messages.html('Nice try! Do not be sneaky!')
+//   } else {
+//     return false
+//   }
+// }
+
 function showNextPlayer (turn, player) {
   messages.html('Player turn : ' + player)
 }
@@ -189,6 +210,33 @@ function showNextPlayer (turn, player) {
 function winMessage () {
   messages.html('Player ' + player + ' has won!!!')
 }
+
+function checkForDraw () {
+  messages.html('This is a tie game!')
+}
+
+// function clearBoxesAfterWin (td, table) {
+//   if (winMessage()) {
+//     return (table.find('#box1').hasClass('') && table.find('#box2').hasClass('') &&
+//     table.find('#box3').hasClass('') && table.find('#box4').hasClass('') &&
+//     table.find('#box5').hasClass('') && table.find('#box6').hasClass('') &&
+//     table.find('#box7').hasClass('') && table.find('#box8').hasClass('') &&
+//     table.find('#box9').hasClass(''))
+//   }
+// }
+// table.find('#box1').hasClass('') && table.find('#box2').hasClass('') &&
+// table.find('#box3').hasClass('') && table.find('#box4').hasClass('') &&
+// table.find('#box5').hasClass('') && table.find('#box6').hasClass('') &&
+// table.find('#box7').hasClass('') && table.find('#box8').hasClass('') &&
+// table.find('#box9').hasClass('')
+
+// if ((!won) && (pattern === 'cross' || 'circle') && table.find('#box1').hasClass(pattern) && table.find('#box2').hasClass(pattern) &&
+// table.find('#box3').hasClass(pattern) && table.find('#box4').hasClass(pattern) &&
+// table.find('#box5').hasClass(pattern) && table.find('#box6').hasClass(pattern) &&
+// table.find('#box7').hasClass(pattern) && table.find('#box8').hasClass(pattern) &&
+// table.find('#box9').hasClass(pattern)) {
+//   messages.html('It is a tie game!')
+// }
 
 function checkWhoWon (table, pattern, won, player) {
   if ((pattern === 'cross' || 'circle') && table.find('#box1').hasClass(pattern) && table.find('#box2').hasClass(pattern) && table.find('#box3').hasClass(pattern)) {
